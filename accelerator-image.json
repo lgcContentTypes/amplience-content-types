@@ -1,0 +1,30 @@
+{
+  "$schema": "http://bigcontent.io/cms/schema/v1/schema#",
+  "id": "https://raw.githubusercontent.com/lgcContentTypes/amplience-content-types/master/accelerator-image.json",
+  "title": "Image Accelerator",
+  "description": "Image Accelerator",
+  "allOf": [
+    {
+      "$ref": "http://bigcontent.io/cms/schema/v1/core#/definitions/content"
+    }
+  ],
+  "propertyOrder": ["image", "imageAltText"],
+  "type": "object",
+  "properties": {
+    "image": {
+      "title": "Image",
+      "description": "insert an image",
+      "type": "object",
+      "anyOf": [
+        {
+          "$ref": "http://bigcontent.io/cms/schema/v1/core#/definitions/image-link"
+        }
+      ]
+    },
+    "imageAltText": {
+      "type": "string",
+      "title": "Image alt text",
+      "description": "insert image alt text"
+    }
+  }
+}
