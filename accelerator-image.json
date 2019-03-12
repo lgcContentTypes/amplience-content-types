@@ -21,6 +21,11 @@
         }
       ]
     },
+    "ctaLink": {
+      "type": "string",
+      "title": "CTA Link",
+      "description": "Add Link for CTA"
+    },
     "imageAltText": {
       "type": "string",
       "title": "Image alt text",
