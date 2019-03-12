@@ -1,6 +1,6 @@
 {
   "$schema": "http://bigcontent.io/cms/schema/v1/schema#",
-  "id": "https://raw.githubusercontent.com/brakesdev/amplience-content-types/master/accelerator-herobanner.json",
+  "id": "https://raw.githubusercontent.com/lgcContentTypes/amplience-content-types/master/accelerator-herobanner.json",
   "title": "Hero Banner Accelerator",
   "description": "Hero Banner Accelerator",
   "allOf": [
