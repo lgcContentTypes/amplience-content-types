@@ -8,10 +8,20 @@
       "$ref": "http://bigcontent.io/cms/schema/v1/core#/definitions/content"
     }
   ],
-  "propertyOrder": ["image", "imageAltText","heading", "headingAlignment", "headingUnderlineColour", "textBox","textBoxAlignment","textAlignment","ctaText","ctaLink","ctaType","ctaBackgroundColour","ctaForegroundColour"],
+  "propertyOrder": ["image", "set", "imageAltText","heading", "headingAlignment", "headingUnderlineColour", "textBox","textBoxAlignment","textAlignment","ctaText","ctaLink","ctaType","ctaBackgroundColour","ctaForegroundColour"],
   "type": "object",
   "properties": {
      "image": {
+      "title": "Image",
+      "description": "insert an image",
+      "type": "object",
+      "anyOf": [
+        {
+          "$ref": "http://bigcontent.io/cms/schema/v1/core#/definitions/image-link"
+        }
+      ]
+    },
+     "set": {
       "title": "Image",
       "description": "insert an image",
       "type": "object",
