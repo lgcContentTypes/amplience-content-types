@@ -1,0 +1,63 @@
+{
+  "$schema": "http://bigcontent.io/cms/schema/v1/schema#",
+  "id": "https://raw.githubusercontent.com/brakesdev/amplience-content-types/master/accelerator-video.json",
+  "title": "Video Accelerator",
+  "description": "Video Accelerator",
+  "allOf": [
+    {
+      "$ref": "http://bigcontent.io/cms/schema/v1/core#/definitions/content"
+    }
+  ],
+  "propertyOrder": ["videoType", "videoUri", "playerControls","autoplay", "fs","unmute", "related"],
+  "type": "object",
+  "properties": {
+    "videoType": {
+      "type": "string",
+      "title": "Video Type",
+      "enum": ["amplience", "youtube", "vimeo", "facebook"],
+      "description": "Amplience Video, YouTube, Vimeo, Facebook",
+      "format": "text"
+    },
+    "videoId": {
+      "title": "Video ID",
+      "description": "provide video Id",
+      "format": "text",
+      "type": "string"
+    },
+    "playerControls": {
+      "title": "Player Controls",
+      "description": "Show/hide player controls",
+      "enum": ["show"],
+      "format": "text",
+      "type": "string"
+    },
+    "autoplay": {
+      "title": "Auto play",
+      "description": "Do you want video to play on page load?",
+      "enum": ["true"],
+      "format": "text",
+      "type": "string"
+    },
+    "fs": {
+      "title": "Full screen",
+      "description": "Display full screen button",
+      "enum": ["true"],
+      "format": "text",
+      "type": "string"
+    },
+     "unmute": {
+      "title": "Un-mute video",
+      "description": "By default video will be muted",
+      "enum": ["true"],
+      "format": "text",
+      "type": "string"
+    },
+    "related": {
+      "title": "Related videos",
+      "description": "Show related videos? By default set to false",
+      "enum": ["true"],
+      "format": "text",
+      "type": "string"
+    }
+  }
+}
