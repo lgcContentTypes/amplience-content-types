@@ -1,6 +1,6 @@
 {
   "$schema": "http://bigcontent.io/cms/schema/v1/schema#",
-  "id": "https://raw.githubusercontent.com/brakesdev/amplience-content-types/master/accelerator-slider-item.json",
+  "id": "https://raw.githubusercontent.com/lgcContentTypes/amplience-content-types/master/accelerator-slider-item.json",
   "title": "Slider Item",
   "description": "Slider Item",
   "allOf": [
@@ -29,9 +29,9 @@
               "contentType": {
                 "title": "Select accelerators content:",
                 "enum": [
-                  "https://raw.githubusercontent.com/brakesdev/amplience-content-types/master/accelerator-image.json",
-                  "https://raw.githubusercontent.com/brakesdev/amplience-content-types/master/accelerator-video.json",
-                  "https://raw.githubusercontent.com/brakesdev/amplience-content-types/master/accelerator-herobanner.json"
+                  "https://raw.githubusercontent.com/lgcContentTypes/amplience-content-types/master/accelerator-image.json",
+                  "https://raw.githubusercontent.com/lgcContentTypes/amplience-content-types/master/accelerator-video.json",
+                  "https://raw.githubusercontent.com/lgcContentTypes/amplience-content-types/master/accelerator-herobanner.json"
                 ]
               }
             }
