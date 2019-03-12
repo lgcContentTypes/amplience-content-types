@@ -48,12 +48,6 @@
       "title": "Heading horizontal alignment",
       "description": ""
     },
-    "headingUnderlineColour": {
-      "type": "string",
-      "enum": ["green", "dark-green", "red", "white", "blue-gray", "dark-gray", "aa-gray", "light-gray", "purple", "blue", "dark-purple"],
-      "title": "Heading underline colour",
-      "description": ""
-    },
     "textBox": {
       "type": "string",
       "title": "Text box",
