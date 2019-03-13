@@ -1,8 +1,8 @@
 {
   "$schema": "http://bigcontent.io/cms/schema/v1/schema#",
-  "id": "https://raw.githubusercontent.com/lgcContentTypes/amplience-content-types/master/accelerator-slider-item.json",
-  "title": "Slider Item",
-  "description": "Slider Item",
+  "id": "https://s3-eu-west-1.amazonaws.com/amp-product/tutorials/dynamiccontenttutorials/democarousel.json",
+  "title": "Demo Carousel",
+  "description": "Carousel",
   "allOf": [
     {
       "$ref": "http://bigcontent.io/cms/schema/v1/core#/definitions/content"
@@ -10,16 +10,11 @@
   ],
   "type": "object",
   "properties": {
-    "chooser": {
-      "title": "Select component",
-      "description": "A chooser list: image, video or banner",
+    "slides": {
+      "title": "Carousel slides",
+      "description": "slides within the carousel",
       "type": "array",
-      "minItems": 1,
-      "maxItems": 1,
       "items": {
-        "type": "object",
-        "title": "Chooser list",
-        "description": "A chooser list",
         "allOf": [
           {
             "$ref": "http://bigcontent.io/cms/schema/v1/core#/definitions/content-link"
@@ -27,16 +22,16 @@
           {
             "properties": {
               "contentType": {
-                "title": "Select accelerators content:",
+                "title": "Carousel Slides",
                 "enum": [
-                  "https://raw.githubusercontent.com/lgcContentTypes/amplience-content-types/master/accelerator-image.json",
-                  "https://raw.githubusercontent.com/lgcContentTypes/amplience-content-types/master/accelerator-video.json",
-                  "https://raw.githubusercontent.com/lgcContentTypes/amplience-content-types/master/accelerator-herobanner.json"
+                  "https://s3-eu-west-1.amazonaws.com/amp-product/tutorials/dynamiccontenttutorials/democarouselslide.json"
                 ]
               }
             }
           }
-        ]
+        ],
+        "minItems": 1,
+        "maxItems": 6
       }
     }
   }
