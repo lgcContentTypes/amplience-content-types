@@ -1,0 +1,143 @@
+ <html>
+    <head>
+        <!-- A version of jquery for easy data loading -->
+       <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
+        <!-- Load the Amplience CMS Inline SDK available from https://bitbucket.org/amplience/cms-javascript-sdk branch:develop -->
+        <script type="text/javascript" src="https://c1.adis.ws/c/playground/cms-javascript-sdk.min"></script>
+        <!-- include the handlebars runtime -->
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.11/handlebars.min.js"></script>
+        <!-- Some example styling -->
+    <style>
+    @import url(https://fonts.googleapis.com/css?family=Roboto);
+ 
+    /* HTML reset to use border box sizing*/
+    html, body {
+      box-sizing: border-box;
+    }
+    body * {
+      box-sizing: inherit;
+    }
+    .banner {
+      position: relative;
+      width: 100%;
+    }
+    .banner-editorial {
+      position: absolute;
+      top: 20px;
+      width: 100%;
+      padding: 0 20px;
+      text-align: left;
+      font:Roboto;
+      color: white;
+      font-family: Roboto;
+    }
+    .banner-header {
+      font-size: 30px;
+    }
+    .banner-background-image {
+      width: 100%;
+      height: auto;
+    }
+    .banner-call-to-action {
+      position: absolute;
+      bottom: 20px;
+      background-color: rgba(0, 0, 0, 0.5);
+      color: white;
+      right: 20px;
+      padding: 10px;
+      text-decoration: none;
+      font-family: Roboto;
+    }
+    .banner-call-to-action:hover {
+      background-color: rgba(0, 0, 0, 1);
+    }
+    .banner-call-to-action:after {
+      content: ' >'
+    }       
+    </style>
+    </head>
+    <body>
+       <div id="contentRender"></div>
+        <!-- Handlebars Template to render content -->
+        <script id="tutorial-template" type="text/x-handlebars-template">
+           <div class="banner">
+                <!-- construct image URL from the data. Chose to default to HTTPS -->
+                 
+          <picture>
+              
+			<source srcset="https://{{image.defaultHost}}/i/{{image.endpoint}}/{{image.name}}?w=1024">
+			<source srcset="https://{{image.defaultHost}}/i/{{image.endpoint}}/{{image.name}}?w=760">
+			<source srcset="https://{{image.defaultHost}}/i/{{image.endpoint}}/{{image.name}}?w=580">
+			<source srcset="https://{{image.defaultHost}}/i/{{image.endpoint}}/{{image.name}}?w=320">
+			
+						
+  			<img srcset="https://{{image.defaultHost}}/i/{{image.endpoint}}/{{image.name}}?w=1024" style= "width:100%;max-height:100%">    
+
+            </picture>  
+          </div>      
+          </script>
+        <!-- Load data, inline attributes and render via template -->
+        <script>
+        
+    
+        var contentDeliveryUrl = "//" + getQueryVar('api')
+                                    + "/cms/content/query?fullBodyObject=true&query="
+                                    + encodeURIComponent(JSON.stringify({"sys.iri":"http://content.cms.amplience.com/" + getQueryVar('content')}))
+                                    + "&scope=tree&store=store";
+       
+       console.log("This is the URL");
+       console.log(contentDeliveryUrl);
+         
+        
+        var deliveryRequest = $.ajax({
+          url: contentDeliveryUrl
+        });
+        // render the content or display error response
+        deliveryRequest
+          .done(renderContent)
+          .fail(showErrorMessage);
+        function renderContent(data) {
+         
+         console.log("This is the result in JSON-LD:");
+         console.log(JSON.stringify(data));
+         console.log("---");
+          // use the Amplience CMS JavaScript SDK to manipulate the JSON-LD into a content tree
+          var contentTree = amp.inlineContent(data)[0];
+           
+          // This is the new content
+          console.log("This is the result inlined:");
+          console.log(JSON.stringify(contentTree));
+          console.log("---");
+          // fetch the Handlebars template from the DOM
+          var templateSource = $('#tutorial-template').html();
+          var template = Handlebars.compile(templateSource);
+           
+          // render the content using the template
+          var html = template(contentTree);
+          $("#contentRender").html(html);
+        }
+        function showErrorMessage(err) {
+          console.log('Delivery API Request Failure', err);
+          $(document.body).append('<div class="error">An error occurred retrieving your content.<br/><br/>Please ensure that it is published.<br/><br/>Details of the error have been saved to the browser console.</div>');
+        }
+        
+        function getQueryVar(variable) {
+        var query = window.location.search.substring(1);
+        console.log('query');
+        console.log(query);
+
+        var vars = query.split('&');
+        for (var i = 0; i < vars.length; i++) {
+            var pair = vars[i].split('=');
+            if (decodeURIComponent(pair[0]) == variable) {
+                console.log('decoded URL')
+                console.log(decodeURIComponent(pair[1]));
+
+                return decodeURIComponent(pair[1]);
+            }
+        }
+        return false;
+    }
+        </script>
+    </body>
+</html>
