@@ -1,0 +1,60 @@
+{
+  "$schema": "http://bigcontent.io/cms/schema/v1/schema#",
+  "id": "https://raw.githubusercontent.com/brakesdev/amplience-content-types/master/accelerator-slider.json",
+  "title": "Slider",
+  "description": "Slider",
+  "allOf": [
+    {
+      "$ref": "http://bigcontent.io/cms/schema/v1/core#/definitions/content"
+    }
+  ],
+  "type": "object",
+  "propertyOrder": ["sliderId", "autoplay", "slideRate", "chooser"],
+  "properties": {
+    "sliderId": {
+      "type": "string",
+      "title": "Slider ID",
+      "description": "This field is required",
+      "format": "text",
+      "pattern": "^[A-Za-z0-9]*$"
+    },
+    "autoplay": {
+      "type": "string",
+      "title": "Autoplay",
+      "enum": ["true"],
+      "description": "By default set to false",
+      "format": "text"
+    },
+    "slideRate": {
+      "type": "string",
+      "title": "Slide rate",
+      "enum": ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10"],
+      "description": "By default set to 5",
+      "format": "text"
+    },
+    "chooser": {
+      "title": "List of components",
+      "description": "Add components eg. image, video, banners",
+      "type": "array",
+      "items": {
+        "type": "object",
+        "title": "Select component",
+        "description": "",
+        "allOf": [
+          {
+            "$ref": "http://bigcontent.io/cms/schema/v1/core#/definitions/content-link"
+          },
+          {
+            "properties": {
+              "contentType": {
+                "title": "Select accelerators content:",
+                "enum": ["https://raw.githubusercontent.com/brakesdev/amplience-content-types/master/accelerator-slider-item.json"]
+              }
+            }
+          }
+        ]
+      }
+    }
+  },
+  "required": ["sliderId"]
+}
