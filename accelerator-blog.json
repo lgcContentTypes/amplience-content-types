@@ -1,6 +1,6 @@
 {
   "$schema": "http://bigcontent.io/cms/schema/v1/schema#",
-  "id": "{CONTENT_TYPE_BASEPATH}/blog.json",
+  "id": "https://raw.githubusercontent.com/lgcContentTypes/amplience-content-types/master/accelerator-blog.json",
   "title": "Blog Accelerator",
   "description": "Blog Accelerator",
   "allOf": [
@@ -22,7 +22,7 @@
       "description": "",
       "allOf": [
         {
-          "$ref": "{CONTENT_TYPE_BASEPATH}/snippet.json"
+          "$ref": "https://raw.githubusercontent.com/lgcContentTypes/amplience-content-types/master/accelerator-snippet.json"
         }
       ]
     },
@@ -45,12 +45,12 @@
               "contentType": {
                 "title": "Content",
                 "enum": [
-                  "{CONTENT_TYPE_BASEPATH}/banner.json",
-                  "{CONTENT_TYPE_BASEPATH}/image.json",
-                  "{CONTENT_TYPE_BASEPATH}/video.json",
-                  "{CONTENT_TYPE_BASEPATH}/text.json",
-                  "{CONTENT_TYPE_BASEPATH}/cardlist.json",
-                  "{CONTENT_TYPE_BASEPATH}/blog.json"
+                  "https://raw.githubusercontent.com/lgcContentTypes/amplience-content-types/master/accelerator-banner.json",
+                  "https://raw.githubusercontent.com/lgcContentTypes/amplience-content-types/master/accelerator-image.json",
+                  "https://raw.githubusercontent.com/lgcContentTypes/amplience-content-types/master/accelerator-video.json",
+                  "https://raw.githubusercontent.com/lgcContentTypes/amplience-content-types/master/accelerator-text.json",
+                  "https://raw.githubusercontent.com/lgcContentTypes/amplience-content-types/master/accelerator-cardlist.json",
+                  "https://raw.githubusercontent.com/lgcContentTypes/amplience-content-types/master/accelerator-blog.json"
                 ]
               }
             }
