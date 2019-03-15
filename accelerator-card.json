@@ -1,0 +1,65 @@
+{
+  "$schema": "http://bigcontent.io/cms/schema/v1/schema#",
+  "id": "https://raw.githubusercontent.com/lgcContentTypes/amplience-content-types/master/accelerator-card.json",
+  "title": "Card Accelerator",
+  "description": "Card Accelerator",
+  "allOf": [
+    {
+      "$ref": "http://bigcontent.io/cms/schema/v1/core#/definitions/content"
+    }
+  ],
+  "propertyOrder": [
+    "cardImage",
+    "cardName",
+    "description",
+    "linkValue",
+    "link"
+  ],
+  "type": "object",
+  "properties": {
+    "cardImage": {
+      "type": "object",
+      "allOf": [
+        {
+          "$ref": "http://bigcontent.io/cms/schema/v1/core#/definitions/content-link"
+        },
+        {
+          "properties": {
+            "contentType": {
+              "title": "image",
+              "enum": [
+                "https://raw.githubusercontent.com/lgcContentTypes/amplience-content-types/master/accelerator-image.json"
+              ]
+            }
+          }
+        }
+      ],
+      "title": "Card Image",
+      "description": "Select or create an image content"
+    },
+    "cardName": {
+      "type": "string",
+      "minLength": 0,
+      "maxLength": 150,
+      "title": "Card name",
+      "description": ""
+    },
+    "description": {
+      "type": "string",
+      "minLength": 0,
+      "maxLength": 200,
+      "title": "Description",
+      "description": ""
+    },
+    "link": {
+      "title": "Link",
+      "description": "add Link",
+      "type": "object",
+      "allOf": [
+        {
+          "$ref": "https://raw.githubusercontent.com/lgcContentTypes/amplience-content-types/master/accelerator-link.json"
+        }
+      ]
+    }
+  }
+}
