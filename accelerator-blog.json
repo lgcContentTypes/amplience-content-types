@@ -51,6 +51,7 @@
                   "https://raw.githubusercontent.com/lgcContentTypes/amplience-content-types/master/accelerator-text.json",
                   "https://raw.githubusercontent.com/lgcContentTypes/amplience-content-types/master/accelerator-cardlist.json",
                   "https://raw.githubusercontent.com/lgcContentTypes/amplience-content-types/master/accelerator-blog.json",
+                  "https://raw.githubusercontent.com/lgcContentTypes/amplience-content-types/master/accelerator-blog-category.json",
                   "https://category.lgc.com"
                 ]
               }
