@@ -43,6 +43,30 @@
           {
             "properties": {
               "contentType": {
+                "title": "Add category",
+                "enum": [
+                  "https://raw.githubusercontent.com/lgcContentTypes/amplience-content-types/master/accelerator-blog-category.json"
+                ]
+              }
+            }
+          }
+        ]
+      },
+      "minItems": 0,
+      "maxItems": 50,
+      "title": "Categories",
+      "description": "Add categories associated to your blog"
+    },
+    "content": {
+      "type": "array",
+      "items": {
+        "allOf": [
+          {
+            "$ref": "http://bigcontent.io/cms/schema/v1/core#/definitions/content-link"
+          },
+          {
+            "properties": {
+              "contentType": {
                 "title": "Content",
                 "enum": [
                   "https://raw.githubusercontent.com/lgcContentTypes/amplience-content-types/master/accelerator-banner.json",
@@ -50,9 +74,7 @@
                   "https://raw.githubusercontent.com/lgcContentTypes/amplience-content-types/master/accelerator-video.json",
                   "https://raw.githubusercontent.com/lgcContentTypes/amplience-content-types/master/accelerator-text.json",
                   "https://raw.githubusercontent.com/lgcContentTypes/amplience-content-types/master/accelerator-cardlist.json",
-                  "https://raw.githubusercontent.com/lgcContentTypes/amplience-content-types/master/accelerator-blog.json",
-                  "https://raw.githubusercontent.com/lgcContentTypes/amplience-content-types/master/accelerator-blog-category.json",
-                  "https://category.lgc.com"
+                  "https://raw.githubusercontent.com/lgcContentTypes/amplience-content-types/master/accelerator-blog.json"
                 ]
               }
             }
