@@ -1,0 +1,23 @@
+{
+  "$schema": "http://bigcontent.io/cms/schema/v1/schema#",
+  "id": "https://raw.githubusercontent.com/lgcContentTypes/amplience-content-types/master/accelerator-blog-category.json",
+  "title": "Text Acclerator",
+  "description": "Blog Category",
+  "allOf": [
+    {
+      "$ref": "http://bigcontent.io/cms/schema/v1/core#/definitions/content"
+    }
+  ],
+  "propertyOrder": [
+    "text"
+  ],
+  "type": "object",
+  "properties": {
+    "category": {
+      "title": "Category name",
+			"type": "string",
+			"minLength": 0,
+			"maxLength": 100
+    }
+  }
+}
