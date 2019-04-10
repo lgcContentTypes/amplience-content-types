@@ -33,7 +33,7 @@
       "title": "Title",
       "description": ""
     },
-    "content": {
+    "category": {
       "type": "array",
       "items": {
         "allOf": [
