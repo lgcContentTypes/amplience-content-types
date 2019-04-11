@@ -21,6 +21,17 @@
         }
       ]
     },
+		"tt": {
+			"title": "Transform Templates",
+			"description": "Choose a amplience dynamic template for your images",
+			"type": "string",
+			"enum": [
+				"cartIcon",
+				"thumbnail",
+				"product",
+				"zoom"
+			]
+		},
     "ctaLink": {
       "type": "string",
       "title": "CTA Link",
