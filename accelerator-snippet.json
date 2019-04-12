@@ -39,16 +39,6 @@
       "maxLength": 500,
       "title": "Snippet Description",
       "description": ""
-    },
-    "cta": {
-      "type": "object",
-      "title": "Call to action",
-      "description": "",
-      "allOf": [
-        {
-          "$ref": "https://raw.githubusercontent.com/lgcContentTypes/amplience-content-types/master/accelerator-link.json"
-        }
-      ]
     }
   }
 }
