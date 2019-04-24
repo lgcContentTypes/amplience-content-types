@@ -73,7 +73,8 @@
                   "https://raw.githubusercontent.com/lgcContentTypes/amplience-content-types/master/accelerator-image.json",
                   "https://raw.githubusercontent.com/lgcContentTypes/amplience-content-types/master/accelerator-video.json",
                   "https://raw.githubusercontent.com/lgcContentTypes/amplience-content-types/master/accelerator-text.json",
-                  "https://raw.githubusercontent.com/lgcContentTypes/amplience-content-types/master/accelerator-splitblock.json"
+                  "https://raw.githubusercontent.com/lgcContentTypes/amplience-content-types/master/accelerator-splitblock.json",
+                  "https://raw.githubusercontent.com/lgcContentTypes/amplience-content-types/master/accelerator-slider2.json"
                 ]
               }
             }
