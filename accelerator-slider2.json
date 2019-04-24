@@ -30,8 +30,7 @@
                 "title": "slides",
                 "enum": [
                   "https://raw.githubusercontent.com/lgcContentTypes/amplience-content-types/master/accelerator-banner.json",
-                  "https://raw.githubusercontent.com/lgcContentTypes/amplience-content-types/master/accelerator-image.json",
-                  "https://raw.githubusercontent.com/lgcContentTypes/amplience-content-types/master/accelerator-video.json"
+                  "https://raw.githubusercontent.com/lgcContentTypes/amplience-content-types/master/accelerator-image.json"
                 ]
               }
             }
