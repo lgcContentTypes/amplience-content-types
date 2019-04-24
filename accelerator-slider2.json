@@ -47,6 +47,11 @@
       "type": "boolean",
       "title": "Loop slider",
       "description": ""
+    },
+    "autoPlay": {
+      "type": "boolean",
+      "title": "Autoplay slider",
+      "description": ""
     }
   }
 }
