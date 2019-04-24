@@ -42,6 +42,11 @@
       "description": "",
       "minItems": 1,
       "maxItems": 8
+    },
+    "loop": {
+      "type": "boolean",
+      "title": "Loop slider",
+      "description": ""
     }
   }
 }
